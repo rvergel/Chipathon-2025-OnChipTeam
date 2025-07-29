@@ -1,0 +1,3 @@
+[submodule "external/switch_matrix"]
+	path = external/switch_matrix
+	url = https://github.com/mosbiuschip/switch_matrix_gf180mcu_9t5v0.git
