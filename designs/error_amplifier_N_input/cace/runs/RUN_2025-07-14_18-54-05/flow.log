@@ -1,0 +1,21 @@
+Running parameters: dc_params, ac_params, os_params, cmrr_params, magic_area, magic_drc, netgen_lvs, klayout_drc_feol, klayout_drc_beol, klayout_drc_full
+No netlist or schematic for project error_amplifier_N_input.
+(schematic master file xschem/error_amplifier_N_input.sch not found.)
+
+No structural verilog netlist, either.
+No (compressed) GDS layout found.
+No layout for project error_amplifier_N_input found.
+No (compressed) GDS layout found.
+No layout for project error_amplifier_N_input found.
+Failed to regenerate project netlist, aborting.
+Parameter dc_params: Canceled.
+Parameter ac_params: Canceled.
+Parameter os_params: Canceled.
+Parameter cmrr_params: Canceled.
+Parameter magic_area: Canceled.
+Parameter magic_drc: Canceled.
+Parameter netgen_lvs: Canceled.
+Parameter klayout_drc_feol: Canceled.
+Parameter klayout_drc_beol: Canceled.
+Parameter klayout_drc_full: Canceled.
+Done with CACE simulations and evaluations in 0:00:00.
