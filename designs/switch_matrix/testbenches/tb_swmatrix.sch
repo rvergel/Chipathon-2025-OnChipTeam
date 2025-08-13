@@ -6,13 +6,13 @@ S {}
 E {}
 B 2 467.5 90 1643.75 1235 {flags=graph
 y1=0
-ypos1=8.235
-ypos2=10.935
+ypos1=-1.08
+ypos2=1.62
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-06
+x2=6e-06
 divx=5
 subdivx=1
 ylabmag=0.5
@@ -26,52 +26,17 @@ autoload=1
 digital=1
 sim_type=tran
 rawfile=$netlist_dir/tb_swmatrix.raw
-color="4 5 6 7 12 12 12 12 12 12 12 12 12 18 18 18 18 18 18 18 18 18 21 21 21 21 21 21 21 21 21 4 4 4 4 4 4 4 4 4"
-node="clock_in
-phi_1
-phi_2
-data_in
-xswmatrix.xswmatrix_row[48].q[9]
-xswmatrix.xswmatrix_row[48].q[8]
-xswmatrix.xswmatrix_row[48].q[7]
-xswmatrix.xswmatrix_row[48].q[6]
-xswmatrix.xswmatrix_row[48].q[5]
-xswmatrix.xswmatrix_row[48].q[4]
-xswmatrix.xswmatrix_row[48].q[3]
-xswmatrix.xswmatrix_row[48].q[2]
-xswmatrix.xswmatrix_row[48].q[1]
-xswmatrix.xswmatrix_row[1].q[1]
-xswmatrix.xswmatrix_row[1].q[2]
-xswmatrix.xswmatrix_row[1].q[3]
-xswmatrix.xswmatrix_row[1].q[4]
-xswmatrix.xswmatrix_row[1].q[5]
-xswmatrix.xswmatrix_row[1].q[6]
-xswmatrix.xswmatrix_row[1].q[7]
-xswmatrix.xswmatrix_row[1].q[8]
-xswmatrix.xswmatrix_row[1].q[9]
-xswmatrix.xswmatrix_row[5].q[1]
-xswmatrix.xswmatrix_row[5].q[2]
-xswmatrix.xswmatrix_row[5].q[3]
-xswmatrix.xswmatrix_row[5].q[4]
-xswmatrix.xswmatrix_row[5].q[5]
-xswmatrix.xswmatrix_row[5].q[6]
-xswmatrix.xswmatrix_row[5].q[7]
-xswmatrix.xswmatrix_row[5].q[8]
-xswmatrix.xswmatrix_row[5].q[9]
-xswmatrix.xswmatrix_row[47].q[9]
-xswmatrix.xswmatrix_row[47].q[8]
-xswmatrix.xswmatrix_row[47].q[7]
-xswmatrix.xswmatrix_row[47].q[6]
-xswmatrix.xswmatrix_row[47].q[5]
-xswmatrix.xswmatrix_row[47].q[4]
-xswmatrix.xswmatrix_row[47].q[3]
-xswmatrix.xswmatrix_row[47].q[2]
-xswmatrix.xswmatrix_row[47].q[1]"
 hilight_wave=22
 xlabmag=0.5
 mode=Line
 y2=2.7
-legend=0}
+legend=0
+color="4 5 6 7 4"
+node="phi_2
+phi_1
+data
+clock_in
+xswmatrix.xswmatrix_row[48].q[9]"}
 T {Testing a Switch Matrix with 5 by 10 registers
 - 5 pins (rows) and 10 buses (columns) [can be expanded later]
 - clock and data read from a file (see code block)
@@ -100,32 +65,39 @@ N 75 -110 145 -110 {lab=clockb}
 N 225 -145 225 -110 {lab=clock_in}
 N 225 -145 271.25 -145 {lab=clock_in}
 N 1305.625 -145.625 1305.625 -145 {lab=BUS[1:10]}
-N 1305.625 -125.625 1305.625 -125 {lab=PIN[1:48]}
 N 1255 -165 1305.625 -165 {lab=D_out}
 N 1305.625 -145 1407.5 -145 {lab=BUS[1:10]}
 N 1255 -145 1305.625 -145 {lab=BUS[1:10]}
-N 1305.625 -125 1407.5 -125 {lab=PIN[1:48]}
-N 1255 -125 1305.625 -125 {lab=PIN[1:48]}
+N 1305.625 -125 1407.5 -125 {lab=PIN[1:57]}
 N 1305.625 -165 1407.5 -165 {lab=D_out}
-N 780 -110 802.5 -110 {lab=#net1}
-N 882.5 -110 955 -110 {lab=PHI_2}
 N 955 -125 955 -110 {lab=PHI_2}
-N 571.25 -125 597.5 -125 {lab=#net2}
-N 597.5 -125 597.5 -110 {lab=#net2}
-N 780 -160 802.5 -160 {lab=#net3}
-N 882.5 -160 882.5 -145 {lab=PHI_1}
-N 882.5 -145 955 -145 {lab=PHI_1}
-N 571.25 -145 597.5 -145 {lab=#net4}
-N 597.5 -160 597.5 -145 {lab=#net4}
-N 780 -217.5 802.5 -217.5 {lab=#net5}
+N 571.25 -125 597.5 -125 {lab=#net1}
+N 597.5 -125 597.5 -110 {lab=#net1}
+N 571.25 -145 597.5 -145 {lab=#net2}
+N 597.5 -160 597.5 -145 {lab=#net2}
 N 882.5 -217.5 915 -217.5 {lab=data_in}
 N 915 -217.5 915 -165 {lab=data_in}
 N 915 -165 955 -165 {lab=data_in}
-N 225 -182.5 597.5 -182.5 {lab=#net6}
-N 597.5 -217.5 597.5 -182.5 {lab=#net6}
-N 597.5 -217.5 700 -217.5 {lab=#net6}
-N 597.5 -160 700 -160 {lab=#net4}
-N 597.5 -110 700 -110 {lab=#net2}
+N 225 -182.5 597.5 -182.5 {lab=#net3}
+N 597.5 -217.5 597.5 -182.5 {lab=#net3}
+N 597.5 -217.5 700 -217.5 {lab=#net3}
+N 832.5 -217.5 882.5 -217.5 {lab=data_in}
+N 700 -217.5 748.75 -217.5 {lab=#net3}
+N 750 -110 760 -110 {lab=#net4}
+N 820 -110 830 -110 {lab=PHI_2}
+N 750 -160 760 -160 {lab=#net5}
+N 597.5 -110 660 -110 {lab=#net1}
+N 720 -110 750 -110 {lab=#net4}
+N 720 -160 750 -160 {lab=#net5}
+N 597.5 -160 660 -160 {lab=#net2}
+N 830 -110 846.25 -110 {lab=PHI_2}
+N 900 -145 955 -145 {lab=PHI_1}
+N 930 -110 955 -110 {lab=PHI_2}
+N 846.25 -110 930 -110 {lab=PHI_2}
+N 840 -145 900 -145 {lab=PHI_1}
+N 840 -160 840 -145 {lab=PHI_1}
+N 1255 -125 1306.25 -125 {lab=PIN[1:57]}
+N 820 -160 840 -160 {lab=PHI_1}
 C {devices/vsource.sym} -217.5 12.5 0 0 {name=V1 value=0 savecurrent=false}
 C {devices/gnd.sym} -217.5 72.5 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} -217.5 -96.25 0 0 {name=V2 value=\{VDD\} savecurrent=false}
@@ -134,8 +106,8 @@ C {devices/lab_wire.sym} -217.5 -157.5 0 0 {name=p3 sig_type=std_logic lab=VDDd}
 C {devices/code_shown.sym} -765 541.25 0 0 {name=Simulation only_toplevel=false value="
 .control
 
-    save all
-    TRAN 1n 100n
+    save V(data) V(PHI_1) V(PHI_2) V(clock_in) V(xswmatrix.xswmatrix_row[57].q[9])
+    TRAN 1n 6000n
     write tb_swmatrix.raw
 
 .endc
@@ -171,9 +143,9 @@ C {lab_wire.sym} 132.5 -110 0 0 {name=p4 sig_type=std_logic lab=clockb
 C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_2.sym} 185 -110 0 0 {name=x5 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
 C {lab_wire.sym} 947.5 -165 0 0 {name=p5 sig_type=std_logic lab=data_in}
 C {lab_wire.sym} 250 -145 0 0 {name=p7 sig_type=std_logic lab=clock_in}
-C {Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_48_by_10/swmatrix_48_by_10.sym} 1105 -145 0 0 {name=xSWMATRIX}
+C {Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_57_by_10/swmatrix_57_by_10.sym} 1105 -145 0 0 {name=xSWMATRIX}
 C {lab_wire.sym} 1311.25 -145 0 1 {name=p8 sig_type=std_logic lab=BUS[1:10]}
-C {lab_wire.sym} 1311.25 -125 0 1 {name=p9 sig_type=std_logic lab=PIN[1:48]}
+C {lab_wire.sym} 1311.25 -125 0 1 {name=p9 sig_type=std_logic lab=PIN[1:57]}
 C {noconn.sym} 1407.5 -165 0 1 {name=l3}
 C {noconn.sym} 1407.5 -145 0 1 {name=l4}
 C {noconn.sym} 1407.5 -125 0 1 {name=l5}
@@ -184,17 +156,16 @@ C {netlist.sym} -757.5 237.5 0 0 {name=s1 value="
 
 * clock
 abit [ bit_node ]  input_vector
-.model input_vector d_source(input_file=\\"/foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/testbenches/data_source/data_480.txt\\")
+.model input_vector d_source(input_file=\\"/foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/testbenches/data_source/data_570.txt\\")
 * data
 aclock [ clock_node ] clock_vector
-.model clock_vector d_source(input_file=\\"/foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/testbenches/data_source/data_480_clk.txt\\")
+.model clock_vector d_source(input_file=\\"/foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/testbenches/data_source/data_570_clk.txt\\")
 * convert digital signals to analog
 aconvert [ bit_node clock_node ] [ data clock ] dac_in
 .model dac_in dac_bridge (out_low=0V out_high=1.8V t_rise=0.2ns t_fall=0.2ns)
 "}
-C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_4.sym} 740 -110 0 0 {name=x6 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
-C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_8.sym} 842.5 -110 0 0 {name=x7 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
-C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_4.sym} 740 -160 0 0 {name=x9 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
-C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_8.sym} 842.5 -160 0 0 {name=x10 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
-C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_4.sym} 740 -217.5 0 0 {name=x12 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
-C {libs/gf180mcu_fd_sc_mcu9t5v0_symbols/inv_8.sym} 842.5 -217.5 0 0 {name=x13 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
+C {libs/buffer4_8.sym} 768.75 -187.5 0 0 {name=x7}
+C {libs/buffer.sym} 780 -150 0 0 {name=x2}
+C {libs/buffer.sym} 780 -100 0 0 {name=x6}
+C {libs/buffer.sym} 680 -150 0 0 {name=x8}
+C {libs/buffer.sym} 680 -100 0 0 {name=x9}

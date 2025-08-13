@@ -8,7 +8,8 @@ import argparse
 import csv
 import os
 
-def write_alternating_csv(filename: str, nbits: int) -> None:
+def write_alternating_csv(nbits: int) -> None:
+    filename = 'data_'+str(nbits)+'.csv'
     os.makedirs(os.path.dirname(filename) or ".", exist_ok=True)
     with open(filename, "w", newline="") as f:
         w = csv.writer(f)
@@ -19,7 +20,7 @@ def write_alternating_csv(filename: str, nbits: int) -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Generate alternating-bit CSV")
     ap.add_argument("--bits", type=int, default=480, help="Number of bits")
-    ap.add_argument("--filename", type=str, default="data_480.csv", help="Output CSV filename")
+#    ap.add_argument("--filename", type=str, default="data_480", help="Output CSV filename")
     args = ap.parse_args()
-    write_alternating_csv(args.filename, args.bits)
+    write_alternating_csv(args.bits)
 
