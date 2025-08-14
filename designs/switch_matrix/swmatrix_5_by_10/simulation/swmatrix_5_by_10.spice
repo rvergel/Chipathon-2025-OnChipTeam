@@ -1,0 +1,93 @@
+** sch_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_5_by_10/swmatrix_5_by_10.sch
+**.subckt swmatrix_5_by_10 D_in D_out PHI_1 PHI_2 BUS[1],BUS[2],BUS[3],BUS[4],BUS[5],BUS[6],BUS[7],BUS[8],BUS[9],BUS[10]
+*+ PIN[1],PIN[2],PIN[3],PIN[4],PIN[5] VDDd VSSd enable
+*.iopin PIN[1],PIN[2],PIN[3],PIN[4],PIN[5]
+*.iopin BUS[1],BUS[2],BUS[3],BUS[4],BUS[5],BUS[6],BUS[7],BUS[8],BUS[9],BUS[10]
+*.ipin PHI_1
+*.ipin PHI_2
+*.ipin D_in
+*.opin D_out
+*.iopin VDDd
+*.iopin VSSd
+*.ipin enable
+xswmatrix_row[1] D_in D_out_row[1] PHI_1 PHI_2 BUS[1] BUS[2] BUS[3] BUS[4] BUS[5] BUS[6] BUS[7] BUS[8] BUS[9] BUS[10] PIN[1] VDDd
++ VSSd enable swmatrix_row_10
+xswmatrix_row[2] D_out_row[1] D_out_row[2] PHI_1 PHI_2 BUS[1] BUS[2] BUS[3] BUS[4] BUS[5] BUS[6] BUS[7] BUS[8] BUS[9] BUS[10]
++ PIN[2] VDDd VSSd enable swmatrix_row_10
+xswmatrix_row[3] D_out_row[2] D_out_row[3] PHI_1 PHI_2 BUS[1] BUS[2] BUS[3] BUS[4] BUS[5] BUS[6] BUS[7] BUS[8] BUS[9] BUS[10]
++ PIN[3] VDDd VSSd enable swmatrix_row_10
+xswmatrix_row[4] D_out_row[3] D_out_row[4] PHI_1 PHI_2 BUS[1] BUS[2] BUS[3] BUS[4] BUS[5] BUS[6] BUS[7] BUS[8] BUS[9] BUS[10]
++ PIN[4] VDDd VSSd enable swmatrix_row_10
+xswmatrix_row[5] D_out_row[4] D_out PHI_1 PHI_2 BUS[1] BUS[2] BUS[3] BUS[4] BUS[5] BUS[6] BUS[7] BUS[8] BUS[9] BUS[10] PIN[5] VDDd
++ VSSd enable swmatrix_row_10
+**.ends
+
+* expanding   symbol:  Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_row_10/swmatrix_row_10.sym # of pins=9
+** sym_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_row_10/swmatrix_row_10.sym
+** sch_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_row_10/swmatrix_row_10.sch
+.subckt swmatrix_row_10 D_in D_out PHI_1 PHI_2 BUS[1] BUS[2] BUS[3] BUS[4] BUS[5] BUS[6] BUS[7] BUS[8] BUS[9] BUS[10] pin VDDd
++ VSSd enable
+*.iopin pin
+*.ipin PHI_2
+*.ipin PHI_1
+*.iopin BUS[1],BUS[2],BUS[3],BUS[4],BUS[5],BUS[6],BUS[7],BUS[8],BUS[9],BUS[10]
+*.ipin D_in
+*.opin D_out
+*.iopin VDDd
+*.iopin VSSd
+*.ipin enable
+xSR Q[1] Q[2] Q[3] Q[4] Q[5] Q[6] Q[7] Q[8] Q[9] D_out D_in PHI_1 PHI_2 VDDd VSSd ShiftReg_row_10_2
+xTgates[1] Q[1] BUS[1] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[2] Q[2] BUS[2] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[3] Q[3] BUS[3] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[4] Q[4] BUS[4] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[5] Q[5] BUS[5] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[6] Q[6] BUS[6] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[7] Q[7] BUS[7] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[8] Q[8] BUS[8] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[9] Q[9] BUS[9] pin VDDd VSSd enable swmatrix_Tgate
+xTgates[10] D_out BUS[10] pin VDDd VSSd enable swmatrix_Tgate
+.ends
+
+
+* expanding   symbol:  Chipathon-2025-OnChipTeam/designs/switch_matrix/ShiftReg_row_10_2/ShiftReg_row_10_2.sym # of pins=6
+** sym_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/ShiftReg_row_10_2/ShiftReg_row_10_2.sym
+** sch_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/ShiftReg_row_10_2/ShiftReg_row_10_2.sch
+.subckt ShiftReg_row_10_2 Q[1] Q[2] Q[3] Q[4] Q[5] Q[6] Q[7] Q[8] Q[9] Q[10] D_in PHI_1 PHI_2 VDDd VSSd
+*.ipin PHI_1
+*.ipin PHI_2
+*.ipin D_in
+*.opin Q[1],Q[2],Q[3],Q[4],Q[5],Q[6],Q[7],Q[8],Q[9],Q[10]
+*.iopin VDDd
+*.iopin VSSd
+*  xFF[1],xFF[2],xFF[3],xFF[4],xFF[5],xFF[6],xFF[7],xFF[8],xFF[9],xFF[10] -  DFF_2phase_1  IS MISSING !!!!
+.ends
+
+
+* expanding   symbol:  Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_Tgate/swmatrix_Tgate.sym # of pins=6
+** sym_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_Tgate/swmatrix_Tgate.sym
+** sch_path: /foss/designs/Chipathon-2025-OnChipTeam/designs/switch_matrix/swmatrix_Tgate/swmatrix_Tgate.sch
+.subckt swmatrix_Tgate control T2 T1 VDDd VSSd enable
+*.iopin T1
+*.iopin T2
+*.iopin VDDd
+*.iopin VSSd
+*.ipin control
+*.ipin enable
+XM1 T1 gated_control T2 VSSd nfet_03v3 L=0.28u W=mn_w nf=6 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM2 T1 gated_controlb T2 VDDd pfet_03v3 L=0.28u W=mp_w nf=6 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+**** begin user architecture code
+
+
+.param mn_w=24u
+.param mp_w=72u
+
+**** end user architecture code
+x1 gated_control gated_controlb VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_1
+x2 control enable net1 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__nand2_1
+x3 net1 gated_control VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_1
+.ends
+
+.end
